@@ -15,7 +15,7 @@ public class CharScanner {
         Scanner scan = new Scanner(System.in);
         String userChar = scan.next();
         while (userChar.length() != 1) {
-            System.out.println("Try again");
+            System.out.println("Try again, enter only one character");
             userChar = scan.next();
         }
 
