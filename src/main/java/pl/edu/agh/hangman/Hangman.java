@@ -4,23 +4,14 @@ public class Hangman {
 
     public static void main(String[] args) {
         WordGenerator wg = new WordGenerator();
-        String choosenWord = wg.getWord();
+        WordnikAPI wAPI = new WordnikAPI();
 
-        System.out.println(choosenWord);
+        String word = wg.getWord();
+        String wordFromApi = wAPI.getWord();
+        String wordWithExactNumberOfLetters = wg.getWord(5);
 
-        GameLogic gl = new GameLogic();
-        String hashedWord = choosenWord.replaceAll("[^*]", "_");
-        System.out.println(hashedWord);
-        while(!choosenWord.equals(hashedWord) || gl.triesCount == HANGMANPICS.length){
-            String letter = new CharScanner().getChar();
-            gl.checkIfWordContainsChar(choosenWord, letter, HANGMANPICS);
-            hashedWord = gl.getHashedWord(choosenWord, gl.getGuessedLetters());
-            if (choosenWord.equals(hashedWord)) System.out.println("you won");
-            if (gl.triesCount == HANGMANPICS.length){
-                System.out.println("you lost");
-                break;
-            }
-        }
+        GameLauncher gl = new GameLauncher();
+        gl.playGame(wordWithExactNumberOfLetters);
     }
 
 
@@ -75,5 +66,4 @@ public class Hangman {
                     "      |\n" +
                     "========"
     };
-
 }

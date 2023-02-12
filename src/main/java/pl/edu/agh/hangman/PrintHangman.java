@@ -4,18 +4,9 @@ public class PrintHangman {
 
     public static void main(String args[]){
 
-
-        for (int i = 0; i< HANGMANPICS.length; i++){
-            System.out.println(HANGMANPICS[i]);
-        }
-
-
-        }
+    }
     public void printHangmanByPart (int part){
-        for (int i = 0; i< HANGMANPICS.length; i++){
-            System.out.println(HANGMANPICS[i]);
-        }
-
+            System.out.println(HANGMANPICS[part]);
     }
 
     public static final String[] HANGMANPICS = new String[]{
@@ -69,6 +60,4 @@ public class PrintHangman {
                     "      |\n" +
                     "========"
     };
-
-
 }
