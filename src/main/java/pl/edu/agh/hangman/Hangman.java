@@ -55,5 +55,9 @@ public class Hangman {
     };
 
     public static void main(String[] args) {
+        WordGenerator wg = new WordGenerator();
+        String word = wg.getWord();
+        System.out.println();
+
     }
 }
