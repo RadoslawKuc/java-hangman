@@ -23,7 +23,7 @@ public class WordGenerator {
             Scanner myReader = new Scanner(file);
             while (myReader.hasNextLine()) {
                 String word = myReader.nextLine();
-                words.add(word);
+                words.add(word.toLowerCase());
             }
             myReader.close();
         } catch (FileNotFoundException e) {
